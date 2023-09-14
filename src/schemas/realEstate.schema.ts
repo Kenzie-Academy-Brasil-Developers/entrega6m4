@@ -14,8 +14,8 @@ const realEstateSchema = z.object({
   address: addressSchema,
   categoryId: z.number().int().positive(),
   sold: z.boolean().default(false),
-  createdAt: z.date(),
-  updatedAt: z.date(),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 });
 
 const realEstateCreateSchema = realEstateSchema.omit({ id: true });

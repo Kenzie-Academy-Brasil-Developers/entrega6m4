@@ -11,7 +11,12 @@ userRouter.post(
   middlewares.uniqueEmail,
   userControllers.create
 );
-userRouter.get("", userControllers.read);
+userRouter.get(
+  "",
+  middlewares.verifyToken,
+  middlewares.isAdmin,
+  userControllers.read
+);
 
 userRouter.use("/:id", middlewares.idExists);
 

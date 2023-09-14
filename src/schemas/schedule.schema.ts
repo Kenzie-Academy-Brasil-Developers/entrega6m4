@@ -6,7 +6,7 @@ function validateHourFormat(value: string): boolean {
 
 const scheduleSchema = z.object({
   id: z.number().positive().int(),
-  date: z.date(),
+  date: z.string(),
   hour: z.string().refine(validateHourFormat, {
     message: "A hora deve estar no formato 'HH:MM'",
   }),

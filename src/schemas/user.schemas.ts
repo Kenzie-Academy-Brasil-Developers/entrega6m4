@@ -12,6 +12,7 @@ const userSchema = z.object({
 });
 
 const userCreateSchema = userSchema.omit({
+  id:true,
   createdAt: true,
   updatedAt: true,
   deletedAt: true,

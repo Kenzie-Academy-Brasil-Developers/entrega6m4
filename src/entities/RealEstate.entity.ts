@@ -17,17 +17,10 @@ export default class RealEstate {
   id: number;
 
   @Column({ type: "decimal", precision: 12, scale: 2, default: 0 })
-  value: number;
+  value: number | string;
 
   @Column()
   size: number;
-
-  @OneToOne(() => Address, { nullable: false })
-  @JoinColumn()
-  address: Address;
-
-  @ManyToOne(() => Category, { nullable: false })
-  category: Category;
 
   @Column({ default: false })
   sold: boolean;
@@ -37,4 +30,11 @@ export default class RealEstate {
 
   @UpdateDateColumn({ type: "date" })
   updatedAt: string;
+
+  @OneToOne(() => Address, { nullable: false })
+  @JoinColumn()
+  address: Address;
+
+  @ManyToOne(() => Category, { nullable: false })
+  category: Category;
 }

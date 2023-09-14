@@ -1,4 +1,10 @@
-import { CategoryCreate, CategoryRepo } from "./category.interfaces";
+import {
+  CategoryRepo,
+  CategoryCreate,
+  CategoryRead,
+  CategoryUpdate,
+  CategoryReturn,
+} from "./category.interfaces";
 
 import { SessionCreate, SessionReturn } from "./session.interface";
 
@@ -29,8 +35,11 @@ import {
 } from "./realEstate.interfaces";
 
 export {
-  CategoryCreate,
   CategoryRepo,
+  CategoryCreate,
+  CategoryRead,
+  CategoryUpdate,
+  CategoryReturn,
   UserCreate,
   UserRead,
   UserReturn,

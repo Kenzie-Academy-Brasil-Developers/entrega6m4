@@ -1,4 +1,7 @@
+import { getRounds, hashSync } from "bcryptjs";
 import {
+  BeforeInsert,
+  BeforeUpdate,
   Column,
   CreateDateColumn,
   DeleteDateColumn,
@@ -23,7 +26,7 @@ export default class User {
 
   @Column({ length: 120 })
   password: string;
-  
+
   @CreateDateColumn({ type: "date" })
   createdAt: string;
 
@@ -32,4 +35,13 @@ export default class User {
 
   @DeleteDateColumn({ type: "date" })
   deletedAt: string | null;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword() {
+    const hasRounds: number = getRounds(this.password);
+    if (!hasRounds) {
+      this.password = hashSync(this.password, 10);
+    }
+  }
 }

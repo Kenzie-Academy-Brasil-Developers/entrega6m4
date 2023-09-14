@@ -1,3 +1,4 @@
 import userRepository from "./user.repository";
-
-export { userRepository };
+import scheduleRepository from "./schedule.repository";
+import categoryRepository from "./category.repository";
+export { userRepository, scheduleRepository, categoryRepository };

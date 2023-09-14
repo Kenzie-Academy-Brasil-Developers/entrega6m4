@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { AppError } from "../errors";
 
-
 export const isAdmin = (
   req: Request,
   res: Response,

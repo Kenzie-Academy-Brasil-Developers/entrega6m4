@@ -6,7 +6,13 @@ import {
   userReadSchema,
 } from "./user.schemas";
 
-import { categorySchema, categoryCreateSchema } from "./category.schema";
+import {
+  categorySchema,
+  categoryCreateSchema,
+  categoryUpdateSchema,
+  categoryReadSchema,
+  categoryReturnSchema,
+} from "./category.schema";
 
 import { sessionSchema } from "./session.schemas";
 
@@ -39,6 +45,9 @@ export {
   userReadSchema,
   categorySchema,
   categoryCreateSchema,
+  categoryUpdateSchema,
+  categoryReadSchema,
+  categoryReturnSchema,
   addressCreateSchema,
   addressReturnSchema,
   addressReadSchema,

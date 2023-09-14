@@ -6,5 +6,14 @@ const categorySchema = z.object({
 });
 
 const categoryCreateSchema = categorySchema.omit({ id: true });
+const categoryReturnSchema = categoryCreateSchema.array();
+const categoryUpdateSchema = categoryCreateSchema.partial();
+const categoryReadSchema = categoryReturnSchema.array();
 
-export { categorySchema, categoryCreateSchema };
+export {
+  categorySchema,
+  categoryCreateSchema,
+  categoryUpdateSchema,
+  categoryReadSchema,
+  categoryReturnSchema
+};

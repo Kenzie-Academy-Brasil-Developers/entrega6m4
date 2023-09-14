@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { compare } from "bcryptjs";
 import { User } from "../entities";
 import { AppError } from "../errors";

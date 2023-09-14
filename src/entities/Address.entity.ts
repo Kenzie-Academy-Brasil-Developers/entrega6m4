@@ -22,5 +22,5 @@ export default class Address {
   state: string;
 
   @OneToOne(() => RealEstate, (realEstate) => realEstate.address)
-  realEstate: RealEstate;
+  realEstate: Array<RealEstate>;
 }
