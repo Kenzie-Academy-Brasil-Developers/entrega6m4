@@ -20,4 +20,9 @@ userRouter.get(
 
 userRouter.use("/:id", middlewares.idExists);
 
-userRouter.delete("/:id", userControllers.destroy);
+userRouter.delete(
+  "/:id",
+  middlewares.verifyToken,
+  middlewares.isAdmin,
+  userControllers.destroy
+);
